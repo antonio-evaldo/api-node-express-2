@@ -51,8 +51,6 @@ class LivroController {
     
       const livroResultado = await livros.findByIdAndUpdate(id, {$set: req.body});
 
-      console.log(livroResultado);
-    
       if (livroResultado !== null) {
         res.status(200).send({message: "Livro atualizado com sucesso"});
       } else {
@@ -69,8 +67,6 @@ class LivroController {
 
       const livroResultado = await livros.findByIdAndDelete(id);
 
-      console.log(livroResultado);
-      
       if (livroResultado !== null) {
         res.status(200).send({message: "Livro removido com sucesso"});
       } else {
